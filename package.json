@@ -1,0 +1,43 @@
+{
+  "name": "plant-variety-api",
+  "version": "1.0.0",
+  "description": "API to manage plant varieties.",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "webpack --config webpack/webpack.$NODE_ENV.js",
+    "start": "node dist/server",
+    "start2": "NODE_ENV=development npm run build && npm start",
+    "develop": "nodemon -r dotenv/config"
+  },
+  "repository": {
+    "type": "git",
+    "url": "www.github.com/heofs/plant-variety-api"
+  },
+  "keywords": [
+    "plants",
+    "api",
+    "typescript",
+    "graphql"
+  ],
+  "author": "Henning Ofstad",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/webpack-env": "^1.15.1",
+    "clean-webpack-plugin": "^3.0.0",
+    "eslint": "^6.8.0",
+    "nodemon": "^2.0.2",
+    "prettier": "^1.19.1",
+    "ts-loader": "^6.2.1",
+    "ts-node": "^8.6.2",
+    "typescript": "^3.7.5",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
+    "webpack-merge": "^4.2.2",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "dependencies": {
+    "apollo-server": "^2.9.16",
+    "dotenv": "^8.2.0",
+    "graphql": "^14.6.0"
+  }
+}
