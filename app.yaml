@@ -1,10 +1,13 @@
 service: plant-variety-api
 runtime: nodejs10
 
+env_variables:
+  SERVER_PORT: "8080"
+
 automatic_scaling:
   min_idle_instances: 0
   max_idle_instances: 1
-  # max_concurrent_requests: 40
+  max_concurrent_requests: 40
   # min_pending_latency: 10s
   # max_pending_latency: 15s
 

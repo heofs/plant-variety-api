@@ -4,10 +4,11 @@
   "description": "API to manage plant varieties.",
   "main": "src/index.js",
   "scripts": {
-    "build": "webpack --config webpack/webpack.$NODE_ENV.js",
-    "start": "node dist/server",
+    "build": "tsc && cp ./data.json ./dist/data/data.json",
+    "start": "node dist/main.js",
     "start2": "NODE_ENV=development npm run build && npm start",
-    "develop": "nodemon -r dotenv/config"
+    "develop": "nodemon -r dotenv/config",
+    "deploy": "tsc && cp ./data.json ./dist/data/data.json && gcloud app deploy"
   },
   "repository": {
     "type": "git",
@@ -36,8 +37,9 @@
     "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {
-    "apollo-server": "^2.10.1",
+    "apollo-server-express": "^2.10.1",
     "dotenv": "^8.2.0",
+    "express": "^4.17.1",
     "graphql": "^14.6.0"
   }
 }
