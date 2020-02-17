@@ -2,9 +2,9 @@ import data from "./data";
 
 export default {
   Query: {
-    variety: (parent: any, args: { id: string }): any[] => {
+    variety: (parent: any, args: { id: string }): object => {
       const { id } = args;
-      const result: any = data.find(element => element.id == id);
+      const result = data.find((element: any) => element.id == id);
       return result;
     },
     allVarieties: (): any[] => data
